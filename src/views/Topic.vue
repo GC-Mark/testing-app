@@ -17,8 +17,8 @@
       </ion-header>
     
       <div id="container">
-        <router-link :to="{ name: 'career-centre.career-coach.article', params: { topicId: route.params.topicId, topicSlug: 'topic-1', articleId: 1, articleSlug: 'article-1'  } }">Article 1</router-link><br>
-        <router-link :to="{ name: 'career-centre.career-coach.article', params: { topicId: route.params.topicId, topicSlug: 'topic-2', articleId: 2, articleSlug: 'article-2'  } }">Article 2</router-link>
+        <router-link :to="{ name: 'career-centre.career-coach.article', params: { topicId: topicId, topicSlug: 'topic-1', articleId: 1, articleSlug: 'article-1'  } }">Article 1</router-link><br>
+        <router-link :to="{ name: 'career-centre.career-coach.article', params: { topicId: topicId, topicSlug: 'topic-2', articleId: 2, articleSlug: 'article-2'  } }">Article 2</router-link>
       </div>
     </ion-content>
   </ion-page>
@@ -42,8 +42,9 @@ export default defineComponent({
   },
   setup() {
     const route = useRoute();
+    const topicId = route.params.topicId
 
-    return { route }
+    return { topicId }
   }
 });
 </script>
