@@ -17,7 +17,8 @@
       </ion-header>
     
       <div id="container">
-        <router-link :to="{ name: 'career-centre.career-coach.topics' }">Topics</router-link>
+        <router-link :to="{ name: 'career-centre.career-coach.article', params: { topicId: route.params.topicId, topicSlug: 'topic-1', articleId: 1, articleSlug: 'article-1'  } }">Article 1</router-link><br>
+        <router-link :to="{ name: 'career-centre.career-coach.article', params: { topicId: route.params.topicId, topicSlug: 'topic-2', articleId: 2, articleSlug: 'article-2'  } }">Article 2</router-link>
       </div>
     </ion-content>
   </ion-page>
@@ -26,6 +27,7 @@
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import { useRoute } from 'vue-router';
 
 export default defineComponent({
   name: 'Home',
@@ -37,6 +39,11 @@ export default defineComponent({
     IonToolbar,
     IonButtons,
     IonBackButton
+  },
+  setup() {
+    const route = useRoute();
+
+    return { route }
   }
 });
 </script>
