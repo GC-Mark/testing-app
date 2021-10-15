@@ -17,7 +17,8 @@
       </ion-header>
     
       <div id="container">
-        <router-link :to="{ name: 'career-centre.career-coach.topics' }">Topics</router-link>
+        <router-link :to="{ name: 'career-centre.career-coach.topics' }">Touch me</router-link>
+        <br><small>(this is an inline <i>&lt;a&gt;</i> tag)</small>
       </div>
     </ion-content>
   </ion-page>

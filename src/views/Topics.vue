@@ -10,15 +10,21 @@
     </ion-header>
     
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    
-      <div id="container">
-        <router-link :to="{ name: 'career-centre.career-coach.topic', params: { topicId: 1, topicSlug: 'topic-1'  } }">Topic 1</router-link><br>
-        <router-link :to="{ name: 'career-centre.career-coach.topic', params: { topicId: 2, topicSlug: 'topic-2'  } }">Topic 2</router-link>
+      <div>
+        <ion-refresher slot="fixed" @ionRefresh="doRefresh($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+        <div id="container">
+          <router-link :to="{ name: 'career-centre.career-coach.topic', params: { topicId: 1, topicSlug: 'topic-1'  } }">You <i>can't</i> touch me</router-link>
+          <br><small>(this is an inline <i>&lt;a&gt;</i> tag)</small>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <router-link :to="{ name: 'career-centre.career-coach.topic', params: { topicId: 1, topicSlug: 'topic-1'  } }" style="display:block">You <i>can</i> touch me</router-link>
+          <small>(this is an inline <i>&lt;a&gt;</i> tag with <i>display: block</i> applied)</small>
+        </div>
       </div>
     </ion-content>
   </ion-page>
